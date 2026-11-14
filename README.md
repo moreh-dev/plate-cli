@@ -23,3 +23,13 @@ inclusive Asia/Seoul modification dates, and `--title-only` to search titles onl
 Continuation output contains a complete `--cursor` command with the same filters and frozen
 dates. If the results or access change, run the first-page query again. `--json` still prints
 only the hits array; partial coverage and continuation notices go to stderr.
+
+## Google Sheets connections
+
+Sheets connections can appear in ordinary listings and searches. Search covers their Plate title and
+description, not spreadsheet cells. `get` and `fetch` use the existing read permissions; fetched
+connection data contains a link configuration, not a copy or backup of the Google spreadsheet.
+
+Create and edit connections in the Plate web UI. CLI rename, source editing, adding a version and
+restoring an old content version cannot change a connection. Trash recovery and existing lifecycle
+commands retain their normal permissions. This CLI does not add a `--type sheets` filter.
